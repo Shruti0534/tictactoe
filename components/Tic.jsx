@@ -63,6 +63,23 @@ const Tic = () => {
       }
     }
   };
+  const checkdia2 = (myArray) => {
+    let x = 0;
+    let y = 0;
+    for (let i = 0; i < 3; i++) {
+      for (let j = 2; j >=0 ; j--) {
+        if (i + j === 2 && myArray[i][j] === "X") {
+          x++;
+        } else if (i + j === 2 && myArray[i][j] === "O") y++;
+      }
+
+      if (x === 3) {
+        return "1";
+      } else if (y === 3) {
+        return "2";
+      }
+    }
+  };
   const reset = () => {
     calculatewin();
     setturn(true);
@@ -100,12 +117,16 @@ const Tic = () => {
     const x = checkrow(narray);
     const y = checkcol(narray);
     const z = checkdia(narray);
+    const a = checkdia2(narray)
     if (x) {
       x === "1" ? setwin("1") : setwin("2");
     } else if (y) {
       y === "1" ? setwin("1") : setwin("2");
     } else if (z) {
       z === "1" ? setwin("1") : setwin("2");
+    }
+    else if (a) {
+      a === "1" ? setwin("1") : setwin("2");
     } else {
       const check = Checktrial(narray);
       setwin(check);
