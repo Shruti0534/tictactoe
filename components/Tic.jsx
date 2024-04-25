@@ -125,13 +125,13 @@ const Tic = () => {
       {turn ? (
         <div className=" flex-wrap flex gap-10 fixed text-blue-500 inset-0 text-9xl z-0 opacity-10">
           {X.map((item) => (
-            <span>{item}</span>
+            <span key={item}>{item}</span>
           ))}
         </div>
       ) : (
         <div className=" flex-wrap flex gap-10 fixed text-red-500 inset-0 text-9xl z-0 opacity-10">
           {O.map((item) => (
-            <span>{item}</span>
+            <span key={item}>{item}</span>
           ))}
         </div>
       )}
@@ -202,9 +202,9 @@ const Tic = () => {
       <div className=" z-10 ">
         {myArray.map((item, row) => {
           return (
-            <div className="flex">
+            <div key={row} className="flex">
               {item.map((i, col) => (
-                <div
+                <div key={col}
                   className={` ${
                     myArray[row][col] === "X" ? `text-blue-500` : `text-red-500`
                   } flex  text-4xl font-extrabold cursor-pointer justify-center items-center border-2 py-3 px-5 w-16 h-16`}
