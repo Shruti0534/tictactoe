@@ -143,6 +143,7 @@ const Tic = () => {
         turn ? "bg-blue-700" : "bg-red-700"
       } flex flex-col justify-center bg-opacity-50 items-center ease-in-out duration-700 h-screen w-full gap-5`}
     >
+      <div className=" fixed top-5 font-bold text-4xl bg-teal-500 rounded-xl px-4 py-1">Tic Tac Toe</div>
       {turn ? (
         <div className=" flex-wrap flex gap-10 fixed text-blue-500 inset-0 text-9xl z-0 opacity-10">
           {X.map((item) => (
@@ -207,7 +208,7 @@ const Tic = () => {
         </div>
       )}
       {win != "0" && (player1cnt > 0 || player2cnt > 0) && (
-        <div className=" fixed top-10 left-10 bg-yellow-800 rounded-xl px-7 py-4">
+        <div className=" fixed md:top-10 top-20 left-10 bg-yellow-800 rounded-xl px-7 py-4">
           <div className=" font-bold text-xl text-red-600 ">Result</div>
           <div>
             {player1} - {player1cnt}
