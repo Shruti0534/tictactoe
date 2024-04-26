@@ -7,7 +7,7 @@ import S from "@/public/scissor.png";
 import demo from "@/public/demo.png";
 import vs from "@/public/vs.png";
 
-const page = () => {
+const Page = () => {
   const [player1, setplayer1] = useState({
     name: "",
     url: demo,
@@ -184,4 +184,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
