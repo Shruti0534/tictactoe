@@ -51,21 +51,21 @@ const Page = () => {
     if (player1.name === player2.name) {
       setwinner("Trial");
     } else if (player1.name === "R" && player2.name === "P") {
-      setwinner("Player-2");
+      setwinner(player2.playname);
     } else if (player1.name === "S" && player2.name === "R") {
-      setwinner("Player-2");
+      setwinner(player2.playname);
     } else if (player1.name === "P" && player2.name === "S") {
-      setwinner("Player-2");
+      setwinner(player2.playname);
     } else {
-      setwinner("Player-1");
+      setwinner(player1.playname);
     }
   }
   let p1cnt = player1.count
   let p2cnt = player2.count
   const calculatewin = () => {
-    if (winner === "Player-1") {
+    if (winner === player1.playname) {
       p1cnt++
-    } else if (winner === "Player-2") {
+    } else if (winner === player2.playname) {
       p2cnt++
     }
     setplayer1({
